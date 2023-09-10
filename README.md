@@ -57,3 +57,35 @@ if (abc === 'hello') {
 //処理の中身はタブでインデント
 //ifやelseの前後のスペース
 ```
+
+## 以下、自動で生成されたマニュアル
+
+以下の指示に従ってインストール、テストすること
+
+## Project setup
+
+```
+yarn install
+```
+
+### Compiles and hot-reloads for development
+
+```
+yarn serve
+```
+
+### Compiles and minifies for production
+
+```
+yarn build
+```
+
+### Lints and fixes files
+
+```
+yarn lint
+```
+
+### Customize configuration
+
+See [Configuration Reference](https://cli.vuejs.org/config/).
