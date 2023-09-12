@@ -1,18 +1,17 @@
 {
   "files.eol": "\n",
-  "eslint.validate": ["vue", "javascript", "javascriptreact"],
+  "eslint.validate": ["vue", "javascript", "javascriptreact", "typescript"],
   "vetur.validation.template": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.tabSize": 2,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "extensions.ignoreRecommendations": false,
   "vetur.format.defaultFormatter.html": "prettier",
-  "prettier.singleQuote": true,
-  "prettier.semi": false,
-  "prettier.printWidth": 80,
-  "prettier.tabWidth": 2,
-  "prettier.trailingComma": "none"
+  "vetur.format.defaultFormatter.css": "prettier",
+  "vetur.format.defaultFormatter.scss": "prettier",
+  "vetur.format.defaultFormatter.js": "prettier-eslint",
+  "vetur.format.defaultFormatter.ts": "vscode-typescript"
 }

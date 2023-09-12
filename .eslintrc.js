@@ -1,18 +1,19 @@
 module.exports = {
   root: true,
   env: {
+    browser: true,
     node: true
   },
-  extends: [
-    'plugin:vue/vue3-recommended',
-    'eslint:recommended',
-    '@vue/prettier',
-    'eslint-config-prettier',
-    'plugin:vuetify/base'
-  ],
+  parser: 'vue-eslint-parser',
   parserOptions: {
     parser: '@babel/eslint-parser'
   },
+  plugins: ['vue'],
+  extends: [
+    'plugin:vue/essential',
+    'plugin:prettier/recommended',
+    'eslint:recommended'
+  ],
   rules: {
     'vue/multi-word-component-names': 'off',
     'no-unused-vars': 'error',
@@ -22,11 +23,12 @@ module.exports = {
     'vue/no-mutating-props': 'error', // invalid
     'no-console': process.env.NODE_ENV === 'production' ? 'off' : 'warn',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'off' : 'error',
-    'prettier/prettier':
-      process.env.NODE_ENV === 'production' ? 'off' : 'error',
+    'prettier/prettier': ['error', { printWidth: 80 }],
     'vue/require-explicit-emits':
       process.env.NODE_ENV === 'production' ? 'off' : 'error',
     'vue/order-in-components':
-      process.env.NODE_ENV === 'production' ? 'off' : 'error'
+      process.env.NODE_ENV === 'production' ? 'off' : 'error',
+    semi: ['error', 'never'],
+    quotes: ['error', 'single']
   }
 }
