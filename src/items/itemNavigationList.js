@@ -5,7 +5,7 @@ export default [
   },
   {
     name: 'ABOUT',
-    url: '/about'
+    url: '/a'
   },
   {
     name: 'TWITTER',
