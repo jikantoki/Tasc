@@ -1,6 +1,8 @@
+#Githubに共有したくないものを選ぶ
 .DS_Store
 node_modules
 /dist
+/storage
 
 
 # local env files
