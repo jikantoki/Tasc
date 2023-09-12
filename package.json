@@ -3,7 +3,21 @@
   "version": "0.0.1",
   "private": true,
   "description": "簡単にタスクを管理",
-  "author": "jikantoki <info@enoki.xyz> (https://github.com/jikantoki)",
+  "author": {
+    "name": "jikantoki",
+    "email": "info@enoki.xyz",
+    "url": "https://github.com/jikantoki"
+  },
+  "homepage": "https://github.com/jikantoki/tasc",
+  "bugs": {
+    "url": "https://github.com/jikantoki/tasc/issues",
+    "email": "info@enoki.xyz"
+  },
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jikantoki/tasc.git"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -67,14 +81,5 @@
     "last 2 versions",
     "not dead",
     "not ie 11"
-  ],
-  "bugs": {
-    "url": "https://github.com/jikantoki/tasc/issues",
-    "email": "info@enoki.xyz"
-  },
-  "license": "UNLICENSED",
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/jikantoki/tasc.git"
-  }
+  ]
 }
