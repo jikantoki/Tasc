@@ -1,5 +1,28 @@
 # スケジュール管理・共有ソフト
 
+## セットアップ
+
+### 前提条件
+
+Node.jsがインストールされていること
+
+```shell
+git clone git@github.com:jikantoki/tasc.git tasc
+cd tasc
+npm install
+yarn install
+```
+
+## 実行方法
+
+※ポート番号12345以上の空きポートで実行されます
+
+```shell
+yarn serve
+```
+
+http://localhost:12345 にアクセス
+
 ## ブランチ名規則
 
 **英語しか使えないので注意**
