@@ -7,12 +7,12 @@
 ### 新機能開発
 
 feature/本名以外のペンネーム/新機能について 10 ～ 20 文字程度で概要  
-ex) feature/jikantoki/save-data
+ex: feature/jikantoki/save-data
 
 ### バグ修正、コード改善
 
 hotfix/本名以外のペンネーム/修正内容について 10 ～ 20 文字程度で概要  
-ex) hotfix/jikantoki/fix-directory-path
+ex: hotfix/jikantoki/fix-directory-path
 
 **ブランチ名は機能や修正内容事に分けること**
 
@@ -47,15 +47,50 @@ API は原則 GET で入力して JSON を出力
 
 ### 命令文について
 
-```
+```js
+/**
+ * 変数の説明
+ */
 let abc = 'hello' //イコール前後にスペース
 if (abc === 'hello') {
   hogehoge()
 } else {
   piyopiyo()
 }
+
+/**
+ * 関数の説明
+ * @param {int} fuga フガフガするために必要な引数
+ * @param {string} piyo ピヨピヨで分岐するときにこの文字列を使う
+ */
+const hogehoge = (fuga, piyo) => {
+  console.log('関数')
+}
 //処理の中身はタブでインデント
 //ifやelseの前後のスペース
+```
+
+## その他ルール
+
+### Vueの書き方
+
+```vue
+<template lang="pug">
+//HTML部分はpugを使って記述
+
+//内部リンクでaタグは使わない、代替手段↓
+router-link(to="/") トップページ
+
+//外部リンクの場合
+a(href="https://enoki.xyz") エノキ電気
+</template>
+
+<script></script>
+
+<style lang="scss">
+//スタイルシートはSCSSで書く
+//具体的な使い方はCSSとほとんど変わらないので割愛
+</style>
 ```
 
 ## 以下、自動で生成されたマニュアル
@@ -64,25 +99,25 @@ if (abc === 'hello') {
 
 ## Project setup
 
-```
+```shell
 yarn install
 ```
 
 ### Compiles and hot-reloads for development
 
-```
+```shell
 yarn serve
 ```
 
 ### Compiles and minifies for production
 
-```
+```shell
 yarn build
 ```
 
 ### Lints and fixes files
 
-```
+```shell
 yarn lint
 ```
 

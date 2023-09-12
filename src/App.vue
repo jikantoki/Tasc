@@ -1,9 +1,12 @@
-<template>
-  <v-app>
-    <v-main>
-      <HelloWorld />
-    </v-main>
-  </v-app>
+<template lang="pug">
+v-app
+  v-main
+    router-view
+    ul
+      ll
+        router-link(to="/") Top
+      ll
+        router-link(to="/a") Osakana
 </template>
 
 <script>
@@ -18,6 +21,11 @@ export default {
 
   data: () => ({
     //
-  })
+  }),
+  mounted: () => {
+    console.log('hello')
+  }
 }
 </script>
+
+<style lang="scss" scoped></style>
