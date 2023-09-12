@@ -8,21 +8,15 @@ v-app(ontouchstart="")
       v-app-bar-nav-icon(@click="toggleDrawer()")
       v-toolbar-title {{ PackageJson.name }}
     v-navigation-drawer(v-model="drawer" fixed temporary)
-      v-list(nav dense lines="zero")
+      v-list(nav)
         v-list-item-group
           v-list-item(v-for="navigationItem in NavigationList")
             li.nav(@click="a(navigationItem.url)")
               p {{ navigationItem.name }}
   v-main
-    .links
-      .linkTop
-        router-link(to="/")
-          .navButton Top
-      .linkOsakana
-        router-link(to="/a")
-          .navButton Osakana
     router-view
   v-footer
+    .copyRight &copy; 2023 - {{ new Date().getFullYear() }} エノキ電気
 </template>
 
 <script>
