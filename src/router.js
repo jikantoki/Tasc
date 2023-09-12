@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Helloworld from './components/HelloWorld'
 import Osakana from './components/test'
+import NotFound from './components/error/404'
 
 const routes = [
   {
@@ -12,6 +13,10 @@ const routes = [
     path: '/a',
     name: 'sub',
     component: Osakana
+  },
+  {
+    path: '/:catchAll(.*)', //404
+    component: NotFound
   }
 ]
 
