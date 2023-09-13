@@ -15,6 +15,7 @@ export default {
      */
     this.webSocket.addEventListener('open', () => {
       this.webSocketStatus = 'connected'
+      console.log('WebSocket Connected')
     })
 
     /**
@@ -52,7 +53,11 @@ export default {
    * @param {object} object なんでも！
    */
   sendObject: function (object) {
-    this.webSocket.send(JSON.stringify(object))
+    if (this.webSocket && this.webSocketStatus === 'connected') {
+      this.webSocket.send(JSON.stringify(object))
+    } else {
+      console.log('WebSocket is null!')
+    }
   },
   /**
    * テキスト送信用
