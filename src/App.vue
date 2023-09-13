@@ -15,6 +15,8 @@ v-app(ontouchstart="")
               p {{ navigationItem.name }}
   v-main
     router-view
+    v-btn(@click="send(sendWebSocket)") click!
+    v-text-field(label="input!" v-model="sendWebSocket")
   v-footer
     .copyRight &copy; 2023 - {{ new Date().getFullYear() }} エノキ電気
 </template>
@@ -34,11 +36,39 @@ export default {
     return {
       PackageJson: PackageJson,
       NavigationList: NavigationList,
-      drawer: false
+      drawer: false,
+      webSocket: null,
+      webSocketURL: 'wss://' + window.document.location.host + '/',
+      sendWebSocket: ''
     }
   },
   mounted() {
+    this.webSocket = new WebSocket('ws://127.0.0.1:5001')
     PackageJson.name = Functions.ifEnglishStartUpper(PackageJson.name)
+
+    this.webSocket.addEventListener('open', () => {
+      console.log('接続が開かれたときに呼び出されるイベント')
+    })
+
+    this.webSocket.addEventListener('message', (e) => {
+      console.log(e.data)
+    })
+
+    this.webSocket.addEventListener('close', (e) => {
+      console.log(
+        '接続が閉じられたときに呼び出されるイベント' + JSON.stringify(e)
+      )
+    })
+
+    this.webSocket.addEventListener('error', (e) => {
+      console.log(
+        'エラーが発生したときに呼び出されるイベント' + JSON.stringify(e)
+      )
+    })
+
+    //btn.addEventListener('click', (e) => {
+    //this.webSocket.send('hello')
+    //})
   },
   methods: {
     toggleDrawer() {
@@ -62,6 +92,9 @@ export default {
         this.$router.push(url)
         return 0
       }
+    },
+    send(string) {
+      this.webSocket.send(string)
     }
   }
 }
