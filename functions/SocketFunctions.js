@@ -1,3 +1,4 @@
+//import { resolve } from 'core-js/fn/promise'
 import Settings from '../src/settings'
 
 export default {
@@ -39,9 +40,14 @@ export default {
       this.responses.push(ResponseObject)
     })
 
-    this.webSocket.addEventListener('close', (e) => {
+    this.webSocket.addEventListener('close', async (e) => {
       this.webSocketStatus = 'disconnected'
       console.log('WebSocket Disconnected:' + JSON.stringify(e))
+      this.webSocket.close(4000, 'Offline')
+      while (this.webSocketStatus !== 'connected') {
+        this.connect()
+        await this.sleep(500)
+      }
     })
 
     this.webSocket.addEventListener('error', (e) => {
@@ -68,6 +74,9 @@ export default {
       text: text,
       type: 'message'
     })
+  },
+  sleep: function (miliSec) {
+    return new Promise((resolve) => setTimeout(resolve, miliSec))
   },
   catch: {
     messageList: [],
